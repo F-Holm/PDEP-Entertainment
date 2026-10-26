@@ -1,0 +1,7 @@
+import src.ejercicio.*
+
+describe "Tests de ejemplo" {
+  test "El objeto es copado" {
+    assert.that(ejemplo.esCopado())
+  }
+}
