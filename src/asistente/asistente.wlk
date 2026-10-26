@@ -1,4 +1,4 @@
-import src.exception.saldoNegativoException.*
+import src.exception.saldoInsuficienteException.*
 
 class Asistente {
     var entradas = #{}
@@ -7,7 +7,7 @@ class Asistente {
 
     method verificarSaldo(){
         if (dineroDisponible <= 0){
-            throw new SaldoNegativoException()
+            throw new SaldoInsuficienteException()
         }
     }
     method pagarEntrada(entrada){
@@ -18,7 +18,7 @@ class Asistente {
             self.verificarSaldo()
             self.pagarEntrada(entrada)
             entradas.add(entrada)
-        } catch e : SaldoNegativoException {
+        } catch e : SaldoInsuficienteException {
             console.println("Error: " + e.message())
         }
     }
