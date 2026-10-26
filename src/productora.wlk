@@ -1,4 +1,4 @@
-class Productora {
+object Productora {
     var asistentes = #{}
 
     method entradasVendidas() = asistentes.asList().flatMap({asistente => asistente.entradas().asList()})
