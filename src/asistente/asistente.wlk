@@ -1,7 +1,6 @@
 import src.exception.saldoNegativoException.*
 
 class Asistente {
-    var tipoAbono
     var entradas = #{}
     var dineroDisponible
     var property abono
@@ -9,7 +8,7 @@ class Asistente {
     method entradas() = entradas
 
     method verificarSaldo(){
-        if (dineroDisponible < 0){
+        if (dineroDisponible <= 0){
             throw new SaldoNegativoException()
         }
     }
@@ -29,5 +28,5 @@ class Asistente {
         const anioPasado = new Date().year() - 1
         return entradas.filter({ entrada => entrada.fecha().year() == anioPasado })
     }
-    method bandasVistas() = entradas.map({entrada => entrada.banda()})
+    method bandasVistas() = entradas.map({entrada => entrada.banda().nombre()})
 }

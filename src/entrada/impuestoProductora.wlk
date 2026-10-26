@@ -1,3 +1,3 @@
 object ImpuestoProductora {
-    var property impuesto
+    var property porcentajeImpuesto = 1
 }

@@ -1,14 +1,13 @@
 object Fan {
-    override method porcentajeDescuento() = 0
-    override method bonificar() {}
+    method porcentajeDescuento() = 0
+    method bonificar() {}
 }
 
-class Vip inherits Asistente {
+class Vip {
     var porcentajeDescuento
 
-    override method porcentajeDescuento() = porcentajeDescuento
-    override method bonificar() {
+    method porcentajeDescuento() = porcentajeDescuento
+    method bonificar() {
         porcentajeDescuento += 1
     }
 }
-
