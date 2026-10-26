@@ -5,5 +5,5 @@ class Entrada {
     const property fecha
     const precioBase = 1000
 
-    method precio() = precioBase * (1 + ImpuestoProductora.impuesto())
+    method precio() = precioBase * (1 + ImpuestoProductora.porcentajeImpuesto() / 100)
 }
