@@ -5,8 +5,6 @@ class Asistente {
     var dineroDisponible
     var property abono
 
-    method entradas() = entradas
-
     method verificarSaldo(){
         if (dineroDisponible <= 0){
             throw new SaldoNegativoException()

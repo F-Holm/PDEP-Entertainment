@@ -1,6 +1,6 @@
 object Productora {
-    var asistentes = #{}
-    var bandas = #{}
+    var property asistentes = #{}
+    var property bandas = #{}
 
     method presupuestoDeBandas() = bandas.sum({banda => banda.presupuesto()})
     method entradasVendidas() = asistentes.asList().flatMap({asistente => asistente.entradas().asList()})
