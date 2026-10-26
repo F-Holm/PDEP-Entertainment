@@ -2,3 +2,4 @@ log
 .devcontainer/
 !.devcontainer/devcontainer.json
 *.pdf
+*.txt
