@@ -1,4 +1,4 @@
-object Productora {
+object productora {
     var property asistentes = #{}
     var property bandas = #{}
 

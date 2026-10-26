@@ -1,4 +1,4 @@
-object Fan {
+object fan {
     method porcentajeDescuento() = 0
     method bonificar() {}
 }
