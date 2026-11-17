@@ -1,7 +1,7 @@
 import src.exception.saldoInsuficienteException.*
 
 class Asistente {
-    var entradas = #{}
+    var property entradas = #{}
     var dineroDisponible
     var property abono
 
@@ -11,20 +11,13 @@ class Asistente {
         }
     }
     method pagarEntrada(entrada){
-        dineroDisponible -= entrada.precio() * (1 - abono.porcentajeDescuento() / 100)
+        dineroDisponible -= abono.montoAPagar(entrada)
     }
     method comprarEntrada(entrada) {
-        try{
-            self.verificarSaldo()
-            self.pagarEntrada(entrada)
-            entradas.add(entrada)
-        } catch e : SaldoInsuficienteException {
-            console.println("Error: " + e.message())
-        }
+        self.verificarSaldo()
+        self.pagarEntrada(entrada)
+        entradas.add(entrada)
     }
-    method entradasAnioPasado() {
-        const anioPasado = new Date().year() - 1
-        return entradas.filter({ entrada => entrada.fecha().year() == anioPasado })
-    }
+    method entradasAnioPasado() = entradas.filter({ entrada => entrada.esDelAnioPasado() })
     method bandasVistas() = entradas.map({entrada => entrada.banda().nombre()})
 }
