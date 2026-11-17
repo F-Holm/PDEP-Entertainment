@@ -4,7 +4,7 @@ object productora {
     var property porcentajeImpuesto = 1
 
     method presupuestoDeBandas() = bandas.sum({banda => banda.presupuesto()})
-    method entradasVendidas() = asistentes.asList().flatMap({asistente => asistente.entradas().asList()})
+    method entradasVendidas() = asistentes.flatMap({asistente => asistente.entradas()})
     method cantidadEntradasVendidas() = self.entradasVendidas().size()
     method ingresosPorVentaDeEntradas() = self.entradasVendidas().sum({entrada => entrada.precio()})
     method gananciaTotal() = self.ingresosPorVentaDeEntradas() - self.presupuestoDeBandas()
