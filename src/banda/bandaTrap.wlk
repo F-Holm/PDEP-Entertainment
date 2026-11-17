@@ -4,10 +4,9 @@ class BandaTrap inherits Banda {
     const tieneHielo
     
     override method popularidad() {
-        if (tieneHielo) {
-            return 1000
-        }
-        return 0
+        var popularidad = 0
+        if (tieneHielo) popularidad = 1000
+        return popularidad
     }
     override method canon() = super() * self.popularidad()
     override method gastoExtra() = 0
